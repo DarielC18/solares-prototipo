@@ -1,4 +1,4 @@
-# NODO · Solares — prototipo interactivo
+# Solaris — prototipo interactivo
 
 Prototipo estático para explorar el master plan de **Altavista · Etapa 2**, filtrar y seleccionar solares, calcular el plan de 12/24/36 meses y preparar la solicitud de reserva por WhatsApp. Plano, precios y disponibilidad son **datos ilustrativos**. No hay backend: nada se guarda ni se envía; el botón final solo abre WhatsApp con el mensaje redactado.
 

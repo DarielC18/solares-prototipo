@@ -1,4 +1,4 @@
-/* NODO · Solares — lógica del prototipo (JS nativo, sin dependencias). */
+/* Solaris — lógica del prototipo (JS nativo, sin dependencias). */
 (function () {
   'use strict';
 

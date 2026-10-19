@@ -4,8 +4,8 @@
  * El plano se genera de forma determinista (misma semilla → mismo plano en cada carga).
  */
 window.SOLARES_CFG = {
-  companyName: 'NODO',
-  logoText: 'NODO',
+  companyName: 'Solaris',
+  logoText: 'Solaris',
   projectFull: 'Altavista · Etapa 2',
   location: 'Santiago, República Dominicana',
   eyebrow: 'Proyecto residencial · Etapa 2 · Santiago',
