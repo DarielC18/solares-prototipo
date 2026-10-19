@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NODO · Solares — Altavista Etapa 2</title>
+<meta name="description" content="Explora el master plan, consulta los solares disponibles y prepara tu solicitud de reserva.">
+<meta name="theme-color" content="#101820">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23101820'/%3E%3Cpath d='M28 74 L40 26 L52 74 M64 74 L64 40' stroke='%2316B8D0' stroke-width='6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<div class="app">
+
+<!-- ===== LANDING ===== -->
+<div class="land" id="landing">
+  <header class="nav">
+    <div class="brand"><span class="mk"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 20 L9 4 L15 20 M21 20 L21 9" stroke="#f1f5f7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-cfg="logoText"></span> <small>· Solares</small></div>
+    <nav class="nav-right">
+      <span class="tagp">Prototipo · Datos ilustrativos</span>
+      <button class="btnx btn-out btn-sm" data-act="open-visit">Agendar una visita</button>
+      <button class="btnx btn-cta btn-sm" data-act="go-explorer">Explorar solares</button>
+    </nav>
+  </header>
+  <section class="hero">
+    <div class="hero-copy">
+      <div class="eyebrow" data-cfg="eyebrow"></div>
+      <h1 class="display">Tu próximo terreno comienza aquí.</h1>
+      <p class="lede">Explora el proyecto, consulta los solares disponibles y encuentra el espacio ideal para construir.</p>
+      <div class="cta-row">
+        <button class="btnx btn-cta" data-act="go-explorer">Explorar solares</button>
+        <button class="btnx btn-out" data-act="open-visit">Agendar una visita</button>
+      </div>
+      <div class="statstrip" id="heroStats"></div>
+    </div>
+    <div class="hero-media">
+      <div class="photo-frame">
+        <div class="photo-ph" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.6"/><circle cx="9" cy="10" r="2" stroke="currentColor" stroke-width="1.6"/><path d="M3 17l5-4 4 3 3-2 6 4" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          Fotografía residencial del proyecto
+        </div>
+        <!-- La foto se define en SOLARES_CFG.heroImage (data.js); sin foto se muestra el marcador. -->
+        <div class="photo-tag" data-cfg="location"></div>
+      </div>
+      <div class="plan-inset">
+        <div class="plan-inset-head"><span>Master plan · Etapa 2</span><span class="pi-count" id="piCount"></span></div>
+        <svg class="pi-svg" id="piSvg" preserveAspectRatio="xMidYMid meet" aria-hidden="true"></svg>
+      </div>
+    </div>
+  </section>
+  <section class="process">
+    <div class="pstep"><span class="n">01</span> Explora el master plan y filtra por disponibilidad</div>
+    <div class="pstep"><span class="n">02</span> Calcula tu plan a 12, 24 o 36 meses</div>
+    <div class="pstep"><span class="n">03</span> Prepara tu solicitud de reserva por WhatsApp</div>
+  </section>
+  <footer class="land-foot">
+    <span><span data-cfg="projectFull"></span> · <span data-cfg="location"></span></span>
+    <span>Prototipo demostrativo · Plano, precios y disponibilidad son datos ilustrativos, no oficiales.</span>
+  </footer>
+</div>
+
+<!-- ===== EXPLORER ===== -->
+<div class="exp" id="explorer" hidden>
+  <header class="exp-nav">
+    <button class="btnx btn-ghostx btn-sm" data-act="go-landing" aria-label="Inicio">← <span class="lbl">Inicio</span></button>
+    <div class="brand"><span class="mk"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 20 L9 4 L15 20 M21 20 L21 9" stroke="#f1f5f7" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-cfg="logoText"></span></div>
+    <div class="sp"></div>
+    <label class="searchpill">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M21 21l-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <input type="search" id="search" placeholder="Buscar solar (E2-131, 300 m²…)" aria-label="Buscar solar" autocomplete="off">
+    </label>
+    <div class="vtoggle" role="tablist" aria-label="Vista">
+      <button data-act="view" data-v="mapa" role="tab">Mapa</button>
+      <button data-act="view" data-v="lista" role="tab">Lista</button>
+    </div>
+  </header>
+
+  <div class="stage">
+    <div class="mapwrap" id="mapwrap">
+      <svg class="map" id="map" preserveAspectRatio="xMidYMid meet" aria-label="Plano interactivo de solares"></svg>
+      <div class="tipx" id="tip"></div>
+
+      <div class="mctrl">
+        <button data-act="zoom-in" aria-label="Acercar">+</button>
+        <button data-act="zoom-out" aria-label="Alejar">–</button>
+        <button class="fit" data-act="fit" aria-label="Ajustar plano" title="Ajustar plano"><svg viewBox="0 0 24 24" fill="none"><path d="M4 9V5a1 1 0 0 1 1-1h4M20 9V5a1 1 0 0 0-1-1h-4M4 15v4a1 1 0 0 0 1 1h4M20 15v4a1 1 0 0 1-1 1h-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+      </div>
+
+      <div class="legendx">
+        <h4>Leyenda</h4>
+        <div class="lr"><span class="sw" style="background:#D3DEE5"></span>Disponible</div>
+        <div class="lr"><span class="sw" style="background:#16B8D0"></span>Tu selección</div>
+        <div class="lr"><span class="sw" style="background:#D6A65D"></span>Reservado</div>
+        <div class="lr"><span class="sw" style="background:#AEBAC4"></span>Vendido</div>
+        <div class="lr"><span class="sw" style="background:#2c4537"></span>Áreas verdes</div>
+      </div>
+
+      <div id="detail"></div>
+      <div id="selpill"></div>
+    </div>
+
+    <div class="listx" id="list" hidden></div>
+
+    <div class="floatbar">
+      <div class="fgroup" id="chips"></div>
+      <div class="fgroup sels">
+        <select class="selx" id="fType" aria-label="Tipo de solar"></select>
+        <select class="selx" id="fManz" aria-label="Manzana"></select>
+      </div>
+      <div class="result-pill" id="resultPill"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== RESERVA (drawer) ===== -->
+<div class="ovl" id="flow" hidden data-act="close-flow">
+  <div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="flowTitle"></div>
+</div>
+
+<!-- ===== VISITA (modal informativo) ===== -->
+<div class="ovl center" id="visit" hidden data-act="close-visit">
+  <div class="modalx" role="dialog" aria-modal="true" aria-labelledby="visitTitle">
+    <div class="eyebrow">Agendar una visita</div>
+    <h2 id="visitTitle">Coordina un recorrido por el proyecto</h2>
+    <p>En la versión final podrás elegir fecha y hora para visitar el urbanismo con un asesor. En esta demostración es solo informativo — no se agenda ninguna cita real.</p>
+    <div class="acts"><button class="btnx btn-out btn-sm" data-act="close-visit">Cerrar</button><button class="btnx btn-cta btn-sm" data-act="visit-explore">Mejor elijo mi solar</button></div>
+  </div>
+</div>
+
+<div class="toastx" id="toast" role="status" aria-live="polite" hidden></div>
+
+</div>
+<script src="./data.js"></script>
+<script src="./app.js"></script>
+</body>
+</html>
