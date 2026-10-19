@@ -74,7 +74,7 @@ window.buildSolaresData = function () {
           const corner = (i === 0 || i === ncols - 1); const tipo = corner ? 'Esquina' : 'Estándar';
           if (counter === 131) counter++;
           const id = 'E2-' + counter; counter++;
-          const roll = rnd(); const estado = roll < 0.84 ? 'disponible' : (roll < 0.975 ? 'reservado' : 'vendido');
+          const roll = rnd(); const estado = roll < 0.8 ? 'disponible' : (roll < 0.92 ? 'reservado' : 'vendido');
           const precio = Math.round(area * manzRate * (corner ? 1.08 : 1) / 100) * 100;
           lots.push({ id, manzana: manz, tipo, areaM2: area, precioDop: precio, separacionDop: 10000, estado, cx: +lc.x.toFixed(1), cy: +lc.y.toFixed(1), points: q.map(p => p.x.toFixed(1) + ',' + p.y.toFixed(1)).join(' ') });
         }

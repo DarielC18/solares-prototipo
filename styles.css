@@ -6,7 +6,7 @@
   --nk-acc:#16B8D0; --nk-acc-br:#4fd0e3; --nk-acc-dp:#0e8aa0;
   --nk-gold:#D6A65D;
   --nk-glass:rgba(16,24,32,.82); --nk-glass2:rgba(27,39,50,.9);
-  --map-bg:#0d141b; --lot-free:#D3DEE5; --lot-res:#D6A65D; --lot-sold:#AEBAC4; --green:#2c4537;
+  --map-bg:#0d141b; --lot-free:#D3DEE5; --lot-res:#D6A65D; --lot-sold:#C9574C; --green:#2c4537;
   --font-body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
   --font-display:"Space Grotesk",system-ui,sans-serif;
   --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
@@ -146,7 +146,7 @@ input,select,textarea{font-family:inherit;font-size:15px;color:var(--nk-text)}
 .badgex{font-size:10.5px;font-weight:700;letter-spacing:.04em;padding:4px 10px;border-radius:999px;white-space:nowrap}
 .badgex.disponible{background:rgba(211,222,229,.14);color:#D3DEE5}
 .badgex.reservado{background:rgba(214,166,93,.18);color:#e0b877}
-.badgex.vendido{background:rgba(174,186,196,.14);color:#9CAEBB}
+.badgex.vendido{background:rgba(201,87,76,.18);color:#EE9389}
 .badgex.sel{background:rgba(22,184,208,.2);color:#9fe6f0}
 
 /* selection pill */

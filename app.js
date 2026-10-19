@@ -22,9 +22,9 @@
   /* ---------- helpers de estado ---------- */
   const statusLabel = (e) => e === 'disponible' ? 'Disponible' : e === 'reservado' ? 'Reservado' : 'Vendido';
   const badgeCls = (e, sel) => sel ? 'sel' : e;
-  const fillFor = (l, sel) => sel ? '#16B8D0' : l.estado === 'reservado' ? '#D6A65D' : l.estado === 'vendido' ? '#AEBAC4' : '#D3DEE5';
-  const strokeFor = (l, sel) => sel ? '#0b8197' : l.estado === 'reservado' ? '#b2823f' : l.estado === 'vendido' ? '#97a4ad' : '#9FB0BB';
-  const labelColor = (l, sel) => sel ? '#06323a' : l.estado === 'disponible' ? '#3a4a56' : l.estado === 'reservado' ? '#4a3a12' : '#5a6670';
+  const fillFor = (l, sel) => sel ? '#16B8D0' : l.estado === 'reservado' ? '#D6A65D' : l.estado === 'vendido' ? '#C9574C' : '#D3DEE5';
+  const strokeFor = (l, sel) => sel ? '#0b8197' : l.estado === 'reservado' ? '#b2823f' : l.estado === 'vendido' ? '#9C3F36' : '#9FB0BB';
+  const labelColor = (l, sel) => sel ? '#06323a' : l.estado === 'disponible' ? '#3a4a56' : l.estado === 'reservado' ? '#4a3a12' : '#FBEDEA';
   const isSel = (id) => S.selected.includes(id);
 
   function matched(l) {
@@ -246,7 +246,7 @@
   }
 
   function renderFilters() {
-    const dot = { disponible: '#D3DEE5', reservado: '#D6A65D', vendido: '#AEBAC4', todos: '#16B8D0' };
+    const dot = { disponible: '#D3DEE5', reservado: '#D6A65D', vendido: '#C9574C', todos: '#16B8D0' };
     $('chips').innerHTML = [['disponible', 'Disponibles', D.counts.disponible], ['reservado', 'Reservados', D.counts.reservado], ['vendido', 'Vendidos', D.counts.vendido], ['todos', 'Todos', D.counts.total]]
       .map(a => '<button class="chipx' + (S.fStatus === a[0] ? ' on' : '') + '" data-act="chip" data-key="' + a[0] + '" aria-pressed="' + (S.fStatus === a[0]) + '"><span class="dotc" style="background:' + dot[a[0]] + '"></span>' + a[1] + ' <span class="n">' + a[2] + '</span></button>').join('');
     $('fType').value = S.fType; $('fManz').value = S.fManz;
